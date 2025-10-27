@@ -1,6 +1,6 @@
 // module script
 const IMAGES = [
-  // 12枚の画像ファイル名（public/images/ 配下に置いて下さい）
+  // 12枚の画像ファイル名（images/ 配下に置いて下さい）
   "omikuji01.png",
   "omikuji02.png",
   "omikuji03.png",
