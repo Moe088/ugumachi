@@ -1,0 +1,84 @@
+/* シンプルなスタイル */
+:root{
+  --bg: #f5f7fb;
+  --card: #fff;
+  --accent: #f08b6c;
+  --text: #222;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Segoe UI", Roboto, "Yu Gothic", sans-serif;
+  background:linear-gradient(180deg,var(--bg),#eef3fb);
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+.container{
+  width:100%;
+  max-width:520px;
+  background:var(--card);
+  padding:28px;
+  border-radius:12px;
+  box-shadow:0 8px 30px rgba(17,24,39,0.08);
+  text-align:center;
+}
+
+h1{margin:0 0 16px;font-size:1.6rem}
+
+.draw-btn, .reset-btn{
+  appearance:none;
+  border:0;
+  background:var(--accent);
+  color:white;
+  padding:12px 18px;
+  border-radius:10px;
+  font-size:1rem;
+  cursor:pointer;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.draw-btn:active, .reset-btn:active{transform:translateY(1px)}
+.draw-btn:focus, .reset-btn:focus{outline:3px solid rgba(240,139,108,0.25)}
+
+.omikuji-box{display:flex;flex-direction:column;gap:18px;align-items:center}
+.result{display:flex;flex-direction:column;gap:12px;align-items:center}
+.result.hidden{display:none}
+
+/* 画像 */
+.result img{
+  width:260px;
+  max-width:86%;
+  height:auto;
+  border-radius:8px;
+  box-shadow:0 6px 20px rgba(17,24,39,0.12);
+  transform-origin:center;
+  transition:transform .45s cubic-bezier(.2,.9,.25,1), opacity .25s;
+  opacity:1;
+}
+
+/* 結果テキスト */
+.result-text{
+  margin:0;
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+/* footer */
+.foot{margin-top:12px;color:#6b7280;font-size:0.86rem}
+
+/* 小さなアニメーション */
+.reveal { animation: pop .45s cubic-bezier(.2,.9,.25,1); }
+@keyframes pop {
+  0% { transform: scale(.85); opacity:0 }
+  60% { transform: scale(1.05); opacity:1 }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .result img, .draw-btn, .reset-btn { transition:none; animation:none; }
+}

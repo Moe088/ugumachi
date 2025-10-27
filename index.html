@@ -3,42 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>おみくじ（画像版）</title>
-  <meta name="description" content="12種類の画像で結果を表示するおみくじアプリ" />
-  <!-- Open Graph: SNS での見た目（任意で1つデフォルト画像を指定） -->
-  <meta property="og:title" content="おみくじ（画像版）" />
-  <meta property="og:description" content="12種類の画像からランダムで結果が表示されます。" />
-  <meta property="og:image" content="/images/omikuji01.png" />
-  <link rel="stylesheet" href="/style.css" />
+  <title>おみくじアプリ</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <main class="container">
-    <header>
-      <h1>おみくじ</h1>
-      <p class="subtitle">画像で結果を表示します</p>
-    </header>
+    <h1>おみくじ</h1>
 
-    <section class="card" id="result-card" aria-live="polite">
-      <div id="image-wrap" class="image-wrap">
-        <img id="result-img" alt="おみくじ結果" src="" />
-      </div>
-      <div class="controls">
-        <button id="draw-btn" class="btn primary">おみくじをひく</button>
-        <button id="post-x-btn" class="btn" disabled>Xに投稿</button>
-        <button id="post-bsky-btn" class="btn" disabled>Blueskyに投稿</button>
+    <section class="omikuji-box" aria-live="polite">
+      <button id="drawBtn" class="draw-btn" aria-label="おみくじを引く">おみくじを引く</button>
+
+      <div id="result" class="result hidden" role="status" aria-atomic="true">
+        <img id="resultImage" src="" alt="" />
+        <p id="resultText" class="result-text"></p>
+        <button id="resetBtn" class="reset-btn">もう一度</button>
       </div>
     </section>
 
-    <section class="history">
-      <h2>直近の履歴</h2>
-      <ul id="history-list"></ul>
-    </section>
-
-    <footer class="footer">
-      <small>うぐいすの待ちびと : おおうぐみくじ</small>
+    <footer class="foot">
+      <small>画像は images/omikuji1.png ～ omikuji12.png を用意してください。</small>
     </footer>
   </main>
 
-  <script src="/script.js" type="module"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
